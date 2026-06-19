@@ -51,7 +51,7 @@
   </ellipse>
 
   <!-- Ellipse 2 — float1 (9s) -->
-  <ellipse cx="300" cy="850" rx="350" ry="260" fill="url(#g5)">
+  <ellipse cx="300" cy="750" rx="350" ry="260" fill="url(#g5)">
     <animateTransform attributeName="transform" type="translate" values="0,0; 25,-18; 0,0" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0.05 0.55 0.95; 0.45 0.05 0.55 0.95"/>
   </ellipse>
 

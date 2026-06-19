@@ -17,7 +17,7 @@ const design: Record<Variant, string> = {
 };
 
 const Button = ({ children, variant = "violet", href, icon, onClick, className = "" }: ButtonProps) => {
-  const base = `inline-flex items-center gap-2 px-6 py-2.5 rounded-full border text-sm font-medium transition-colors duration-200 cursor-pointer ${design[variant]} ${className}`;
+   const base = `inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full border text-xs sm:text-sm font-medium transition-colors duration-200 cursor-pointer ${design[variant]} ${className}`;
 
   const content = (
     <>

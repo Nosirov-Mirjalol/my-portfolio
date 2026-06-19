@@ -18,7 +18,7 @@ i18n.use(initReactI18next).init({
         hero: {
           badge: "Ishga tayyor",
           title: "Junior Frontend Developer",
-          desc: "Zamonaviy admin panel va Landing pagelar yarataman. Uzbekistan Qarshi.",
+          desc: "Zamonaviy admin panel va Landing pagelar yarataman. Uzbekistan Qarshi",
           cta1: "Loyihalar",
           cta2: "CV yuklash",
         },
@@ -36,7 +36,7 @@ i18n.use(initReactI18next).init({
         hero: {
           badge: "Available for hire",
           title: "Junior Frontend Developer",
-          desc: "I build modern admin panels and dashboards. Based in Karshi, open to global opportunities.",
+          desc: "I build modern admin panels and high-converting landing pages. Based in Karshi, Uzbekistan.",
           cta1: "View Projects",
           cta2: "CV Download",
         },
