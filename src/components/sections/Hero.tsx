@@ -29,12 +29,13 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div
+    <section
       style={{
         backgroundImage: `url(${HeroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      id="home"
       className="relative w-full h-screen flex flex-col justify-center px-8 md:px-20"
     >
       {/* overlay — content o'qilsin uchun */}
@@ -102,7 +103,7 @@ const Hero = () => {
           </Button>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
