@@ -22,13 +22,26 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="flex flex-col items-start justify-center w-full h-auto lg:h-[70vh] gap-2 bg-[#090611]  py-8 text-center md:px-8 md:py-16 lg:px-16 lg:py-24">
-      <div className="w-102">
-        <SectionTitle floor={1} title={t("about.title")} />
-      </div>
+    <section
+      className="w-full min-h-[80vh] bg-[#090611] flex flex-col justify-center items-start px-9 md:px-20 py-4 md:pt-10"
+      id="about"
+    >
+      <motion.div
+        key={i18n.language + "about-title"}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+        className="w-full lg:max-w-100"
+      >
+        <SectionTitle
+          title={t("about.title")}
+          floor={1}
+        />
+      </motion.div>
       <div
         id="about"
-        className="flex flex-col md:flex-row lg:flex-row justify-center items-center gap-10 md:gap-5 px-7 py-2  text-white"
+        className="flex flex-col md:flex-row lg:flex-row justify-center items-center gap-10 md:gap-5 py-5  text-white"
       >
         <div className="w-full lg:w-[50%]">
           <AnimatePresence mode="wait">
@@ -51,7 +64,7 @@ const About = () => {
               {t("about.highlights")}
             </motion.h2>
           </AnimatePresence>
-          <ul className="flex flex-col gap-2 py-2">
+          <ul className="flex flex-col gap-4 py-2">
             <AnimatePresence mode="wait">
               {highlights.map((highlight, index) => (
                 <motion.li

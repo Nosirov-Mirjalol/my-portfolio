@@ -39,6 +39,14 @@ i18n.use(initReactI18next).init({
           title: "Loyihalar",
           description: "Biror Project serverda ishlamayotgan bo'lishi mumkin",
         },
+        skills: {
+          title: "Ko'nikmalar",
+          description: "Har bir loyihada ishlatadigan texnologiyalarim",
+          core: "Asosiy",
+          styling: "dizayn",
+          state: "Ma'lumot boshqaruvi",
+          tools: "Dasturlar",
+        }
       },
     },
     en: {
@@ -74,6 +82,14 @@ i18n.use(initReactI18next).init({
           title: "Projects",
           description: "Some projects may not be working on the server",
         },
+        skills: {
+          title: "Skills",
+          description: "The stack I can (will) use every Project",
+          core: "Core",
+          styling: "Styling",
+          state: "State Management",
+          tools: "Tools",
+        }
       },
     },
   },

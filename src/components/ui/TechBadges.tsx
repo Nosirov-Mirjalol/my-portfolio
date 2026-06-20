@@ -10,7 +10,7 @@ export function TechBadges({ techs }: TechBadgesProps) {
       {techs.map((tech) => (
         <span
           key={tech}
-          className="text-[11.5px] font-medium text-violet-300 bg-violet-600/10 border border-violet-500/20 rounded-full px-3 py-0.5 transition-all duration-300 hover:bg-violet-600/20 hover:border-violet-500/40 cursor-default"
+          className="px-3 py-1.5 text-[13px] font-medium rounded-lg border border-white/10 bg-white/5 text-gray-300 transition-all duration-300 hover:bg-violet-500/20 hover:text-violet-200 hover:border-violet-500/40 cursor-default select-none"
         >
           {tech}
         </span>
