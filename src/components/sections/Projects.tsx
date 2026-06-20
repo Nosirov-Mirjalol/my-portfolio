@@ -16,7 +16,7 @@ const Projects = () => {
           description={t("projects.description")}
         />  
       </div>
-      <div className="flex flex-wrap py-5 px-2">
+      <div className="flex flex-wrap py-5 px-2 gap-5">
         <ProjectCard
           title="LinguaPro"
           description="Multi-role learning platform (admin / teacher / student) with real API integration. LinguaPro created by a team and I created Teacher panel "
