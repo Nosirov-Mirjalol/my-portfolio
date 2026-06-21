@@ -46,7 +46,11 @@ i18n.use(initReactI18next).init({
           styling: "dizayn",
           state: "Ma'lumot boshqaruvi",
           tools: "Dasturlar",
-        }
+        },
+        contact: {
+          title: "Bog'lanish",
+          description: "Hamkorlik yoki salomlashish uchun bemalol murojaat qiling!",
+        },
       },
     },
     en: {
@@ -89,7 +93,11 @@ i18n.use(initReactI18next).init({
           styling: "Styling",
           state: "State Management",
           tools: "Tools",
-        }
+        },
+        contact: {
+          title: "Contact",
+          description: "Feel free to reach out for collaborations or just a friendly hello!",
+        },
       },
     },
   },
