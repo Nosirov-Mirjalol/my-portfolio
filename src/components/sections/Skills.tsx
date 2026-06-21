@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../ui/SectionTitle";
 import { TechBadges } from "../ui/TechBadges";
 import { motion } from "framer-motion";
 import { i18nViewportAnimation } from "../../lib/i18nAnimation";

@@ -1,8 +1,8 @@
 // src/components/ProjectCard.tsx
 
 import { ExternalLink, CodeXml } from "lucide-react";
-import { TechBadges } from "./ui/TechBadges";
-import Button from "./ui/Button";
+import { TechBadges } from "./TechBadges";
+import Button from "./Button";
 
 interface ProjectCardProps {
   title: string;

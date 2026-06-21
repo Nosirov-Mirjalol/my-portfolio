@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { CircleCheckBig } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../ui/SectionTitle";
 import { i18nViewportAnimation } from "../../lib/i18nAnimation";
 
 const About = () => {

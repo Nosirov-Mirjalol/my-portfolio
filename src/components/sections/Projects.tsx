@@ -1,5 +1,5 @@
-import { ProjectCard } from "../ProjectCard";
-import SectionTitle from "../SectionTitle";
+import { ProjectCard } from "../ui/ProjectCard";
+import SectionTitle from "../ui/SectionTitle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { i18nViewportAnimation } from "../../lib/i18nAnimation";
