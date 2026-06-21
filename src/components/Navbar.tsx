@@ -2,15 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
+import { i18nAnimation } from "../lib/i18nAnimation";
 
 const AnimatedText = ({ text }: { text: string }) => (
   <AnimatePresence mode="wait">
     <motion.span
       key={text}
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -6 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
+      {...i18nAnimation}
       className="inline-block"
     >
       {text}
@@ -181,7 +179,7 @@ const Navbar = () => {
                   transition={{ delay: index * 0.05 }}
                   className="flex py-3.5 text-sm text-white/80 hover:text-[#a78bfa] transition-colors border-b border-white/5 last:border-0"
                 >
-                  {t(item.key)}
+                  <AnimatedText text={t(item.key)} />
                 </motion.a>
               ))}
             </div>

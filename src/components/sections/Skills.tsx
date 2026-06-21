@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import SectionTitle from "../SectionTitle";
 import { TechBadges } from "../ui/TechBadges";
 import { motion } from "framer-motion";
+import { i18nViewportAnimation } from "../../lib/i18nAnimation";
 
 const skillGroups = [
   { titleKey: "skills.core", skills: ["React", "TypeScript", "JavaScript"] },
@@ -20,10 +21,7 @@ const Skills = () => {
     >
       <motion.div
         key={i18n.language + "skills-title"}
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.5 }}
+        {...i18nViewportAnimation}
         className="w-full lg:max-w-100"
       >
         <SectionTitle
@@ -34,13 +32,10 @@ const Skills = () => {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-12 w-full max-w-6xl">
-        {skillGroups.map((group, i) => (
+        {skillGroups.map((group) => (
           <motion.div
-            key={group.titleKey}
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.45, delay: i * 0.08 }}
+            key={i18n.language + group.titleKey}
+            {...i18nViewportAnimation}
           >
             <Card title={t(group.titleKey)} skills={group.skills} />
           </motion.div>

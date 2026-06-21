@@ -2,14 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CircleCheckBig } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import SectionTitle from "../SectionTitle";
-
-const fadeProps = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
+import { i18nViewportAnimation } from "../../lib/i18nAnimation";
 
 const About = () => {
   const { t, i18n } = useTranslation();
@@ -28,10 +21,7 @@ const About = () => {
     >
       <motion.div
         key={i18n.language + "about-title"}
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.5 }}
+        {...i18nViewportAnimation}
         className="w-full lg:max-w-100"
       >
         <SectionTitle
@@ -47,7 +37,7 @@ const About = () => {
           <AnimatePresence mode="wait">
             <motion.p
               key={i18n.language + "desc"}
-              {...fadeProps}
+              {...i18nViewportAnimation}
               className="text-lg lg:text-xl font-light leading-relaxed text-gray-300 tracking-wide text-left"
             >
               <span className="font-semibold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
@@ -60,7 +50,10 @@ const About = () => {
 
         <div className="w-full lg:w-[50%] flex justify-center flex-col items-center gap-2">
           <AnimatePresence mode="wait">
-            <motion.h2 key={i18n.language + "highlights"} {...fadeProps}>
+            <motion.h2
+              key={i18n.language + "highlights"}
+              {...i18nViewportAnimation}
+            >
               {t("about.highlights")}
             </motion.h2>
           </AnimatePresence>
@@ -69,12 +62,7 @@ const About = () => {
               {highlights.map((highlight, index) => (
                 <motion.li
                   key={i18n.language + index}
-                  {...fadeProps}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeOut",
-                    delay: index * 0.1,
-                  }}
+                  {...i18nViewportAnimation}
                   className="text-lg font-medium text-white text-start tracking-wider"
                 >
                   <CircleCheckBig className="inline-block mr-2" />

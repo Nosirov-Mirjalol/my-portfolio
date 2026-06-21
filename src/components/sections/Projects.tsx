@@ -2,6 +2,7 @@ import { ProjectCard } from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { i18nViewportAnimation } from "../../lib/i18nAnimation";
 
 const Projects = () => {
   const { t, i18n } = useTranslation();
@@ -13,10 +14,7 @@ const Projects = () => {
     >
       <motion.div
         key={i18n.language + "projects-title"}
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.5 }}
+        {...i18nViewportAnimation}
         className="w-full lg:max-w-100"
       >
         <SectionTitle
@@ -36,13 +34,10 @@ const Projects = () => {
             liveUrl: "https://linguapro.servequake.com/",
             githubUrl: "https://github.com/Nosirov-Mirjalol/lingua",
           },
-        ].map((project, i) => (
+        ].map((project) => (
           <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            key={i18n.language + project.title}
+            {...i18nViewportAnimation}
           >
             <ProjectCard {...project} />
           </motion.div>

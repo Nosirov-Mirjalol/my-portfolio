@@ -3,6 +3,7 @@ import SectionTitle from "../SectionTitle"
 
 import i18n from "../../i18n"
 import { useTranslation } from "react-i18next"
+import { i18nViewportAnimation } from "../../lib/i18nAnimation"
 
 const Contact = () => {
   const {t}=useTranslation()
@@ -13,10 +14,7 @@ const Contact = () => {
     >
       <motion.div
         key={i18n.language + "contact-title"}
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.5 }}
+        {...i18nViewportAnimation}
         className="w-full lg:max-w-100"
       >
         <SectionTitle

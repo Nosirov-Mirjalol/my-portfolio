@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import HeroImage from "../../assets/hero.svg";
 import Button from "../ui/Button";
 import { Download, ArrowRight } from "lucide-react";
+import { i18nAnimation } from "../../lib/i18nAnimation";
 
 const AnimatedText = ({
   text,
@@ -14,10 +15,7 @@ const AnimatedText = ({
   <AnimatePresence mode="wait">
     <motion.span
       key={text}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.25, ease: "easeInOut" }}
+      {...i18nAnimation}
       className={`inline-block ${className}`}
     >
       {text}
