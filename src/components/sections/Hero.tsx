@@ -96,9 +96,18 @@ const Hero = () => {
             View Projects
           </Button>
 
-          <Button variant="dark" href="/cv.pdf" icon={<Download size={15} />}>
-            CV Download
-          </Button>
+          <div className="relative group inline-block">
+            <button
+              disabled
+              className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full border text-xs sm:text-sm font-medium bg-transparent border-white/30 text-white/50 cursor-not-allowed"
+            >
+              CV Download
+              <Download size={15} />
+            </button>
+            <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white/10 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+              Coming soon...
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

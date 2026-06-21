@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 import { i18nAnimation } from "../lib/i18nAnimation";
@@ -54,6 +55,24 @@ const Navbar = () => {
 
   const isUz = i18n.language === "uz";
   const toggle = () => i18n.changeLanguage(isUz ? "en" : "uz");
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    const targetId = href.replace("#", "");
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+    const navbarHeight = 64;
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+    window.scrollTo({ top, behavior: "smooth" });
+    window.history.pushState(null, "", href);
+    setMenuOpen(false);
+  };
 
   return (
     <>
@@ -79,6 +98,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
+                onClick={(event) => scrollToSection(event, item.href)}
                 className="mx-4 cursor-pointer hover:text-[#a78bfa] transition-colors duration-300 text-sm"
               >
                 <AnimatedText text={t(item.key)} />
@@ -173,7 +193,7 @@ const Navbar = () => {
                 <motion.a
                   key={index}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(event) => scrollToSection(event, item.href)}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
