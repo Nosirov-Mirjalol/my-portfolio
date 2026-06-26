@@ -33,10 +33,6 @@ const contactLinks = [
   },
 ];
 
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
 export default function ContactCard() {
   const { t, i18n } = useTranslation();
 
@@ -57,20 +53,22 @@ export default function ContactCard() {
 
     setStatus("loading");
     try {
+      // Kalitlar to'g'ridan-to'g'ri funksiya ichida xatolarsiz yuboriladi
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           from_email: form.email,
           subject: form.subject,
           message: form.message,
         },
-        EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
-    } catch {
+    } catch (error) {
+      console.error("EmailJS Error details:", error);
       setStatus("error");
     }
   };
